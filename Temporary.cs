@@ -7,10 +7,25 @@ namespace SampleSite
 {
     public class Temporary
     {
-        public String Name;
+
+        private String name { get; set; }
         
-        public Temporary() {
-            Name = "HELLO WORLD!!!";
+        public Temporary()
+        {
+            name = "HELLO WORLD!!!";
+        }
+
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+
+            set
+            {
+                name = value;
+            }
         }
     }
 }
