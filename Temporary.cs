@@ -17,15 +17,9 @@ namespace SampleSite
 
         public string Name
         {
-            get
-            {
-                return name;
-            }
+            get { return name; }
 
-            set
-            {
-                name = value;
-            }
+            set { name = value; }
         }
     }
 }
