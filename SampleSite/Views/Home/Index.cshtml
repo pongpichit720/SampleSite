@@ -1,14 +1,37 @@
 ﻿@{
+    SampleSite.Backend.Page1 page1 = new SampleSite.Backend.Page1();
+    SampleSite.Backend.Page2 page2 = new SampleSite.Backend.Page2();
+    SampleSite.Backend.Page3 page3 = new SampleSite.Backend.Page3();
+    SampleSite.Backend.Page4 page4 = new SampleSite.Backend.Page4();
+
     ViewData["Title"] = "Home Page";
-    SampleSite.Temporary temp = new SampleSite.Temporary();
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    
+    <h1 class="display-4">Welcome to <b>SampleSite</b></h1>
     <br />
-    <br />
-    
-    <h3>@temp.Name</h3>
+    <a asp-area="" asp-controller="Home" asp-action="Page1">
+        <div style="float: left; padding: 1em; margin: 0 2% 2% 0; width: 49%; background-color: @page1.GetColor(); color: white;">
+            <h2>@page1.GetLabel().Replace("_", " ")</h2>
+            <h5>@page1.GetDescription()</h5>
+        </div>
+    </a>
+    <a asp-area="" asp-controller="Home" asp-action="Page2">
+        <div style="float: left; padding: 1em; margin: 0 0 2% 0; width: 49%; background-color: @page2.GetColor(); color: white;">
+            <h2>@page2.GetLabel().Replace("_", " ")</h2>
+            <h5>@page2.GetDescription()</h5>
+        </div>
+    </a>
+    <a asp-area="" asp-controller="Home" asp-action="Page3">
+        <div style="float: left; padding: 1em; margin: 0 2% 2% 0; width: 49%; background-color: @page3.GetColor(); color: white;">
+            <h2>@page3.GetLabel().Replace("_", " ")</h2>
+            <h5>@page3.GetDescription()</h5>
+        </div>
+    </a>
+    <a asp-area="" asp-controller="Home" asp-action="Page4">
+        <div style="float: left; padding: 1em; margin: 0 0 2% 0; width: 49%; background-color: @page4.GetColor(); color: white;">
+            <h2>@page4.GetLabel().Replace("_", " ")</h2>
+            <h5>@page4.GetDescription()</h5>
+        </div>
+    </a>
 </div>

@@ -1,0 +1,20 @@
+﻿@{
+    SampleSite.Backend.Page1 page1 = new SampleSite.Backend.Page1();
+
+    ViewData["Title"] = page1.GetLabel().Replace("_", " ");
+    var imagePath = page1.GetImages();
+}
+<h1 style="color: @page1.GetColor()">@ViewData["Title"] - @page1.GetDescription()</h1>
+<br />
+<a href="@imagePath[0]">
+    <img src="@imagePath[0]" style="width: 49%; margin: 0 1% 1% 0;">
+</a>
+<a href="@imagePath[1]">
+    <img src="@imagePath[1]" style="width: 49%; margin: 0 0 1% 0;">
+</a>
+<a href="@imagePath[2]">
+    <img src="@imagePath[2]" style="width: 49%; margin: 0 1% 1% 0;">
+</a>
+<a href="@imagePath[3]">
+    <img src="@imagePath[3]" style="width: 49%; margin: 0 0 1% 0;">
+</a>

@@ -1,0 +1,7 @@
+﻿@{
+    SampleSite.Backend.Page4 page4 = new SampleSite.Backend.Page4();
+
+    ViewData["Title"] = page4.GetLabel().Replace("_", " ");
+}
+<h1 style="color: @page4.GetColor()">@ViewData["Title"] - @page4.GetDescription()</h1>
+<br />

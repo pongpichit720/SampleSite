@@ -1,4 +1,12 @@
 ﻿<!DOCTYPE html>
+
+@{
+    SampleSite.Backend.Page1 page1 = new SampleSite.Backend.Page1();
+    SampleSite.Backend.Page2 page2 = new SampleSite.Backend.Page2();
+    SampleSite.Backend.Page3 page3 = new SampleSite.Backend.Page3();
+    SampleSite.Backend.Page4 page4 = new SampleSite.Backend.Page4();
+}
+
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -18,11 +26,23 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
+                        @*<li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>*@
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Page1" style="color: @page1.GetColor()">@page1.GetLabel()</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Page2" style="color: @page2.GetColor()">@page2.GetLabel()</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Page3" style="color: @page3.GetColor()">@page3.GetLabel()</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Page4" style="color: @page4.GetColor()">@page4.GetLabel()</a>
                         </li>
                     </ul>
                 </div>
@@ -37,7 +57,12 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2020 - SampleSite - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2020 - SampleSite
+            @*- <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>*@
+            - <a asp-area="" asp-controller="Home" asp-action="Page1" style="color: @page1.GetColor()">@page1.GetLabel()</a>
+            - <a asp-area="" asp-controller="Home" asp-action="Page2" style="color: @page2.GetColor()">@page2.GetLabel()</a>
+            - <a asp-area="" asp-controller="Home" asp-action="Page3" style="color: @page3.GetColor()">@page3.GetLabel()</a>
+            - <a asp-area="" asp-controller="Home" asp-action="Page4" style="color: @page4.GetColor()">@page4.GetLabel()</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
