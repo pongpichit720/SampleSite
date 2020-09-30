@@ -19,7 +19,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">SampleSite</a>
+                <a id="NavHeaderHome" class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">SampleSite</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -33,16 +33,16 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>*@
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Page1" style="color: @page1.GetColor()">@page1.GetLabel()</a>
+                            <a id="NavHeaderPage1" class="nav-link" asp-area="" asp-controller="Home" asp-action="Page1" style="color: @page1.GetColor()">@page1.GetLabel()</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Page2" style="color: @page2.GetColor()">@page2.GetLabel()</a>
+                            <a id="NavHeaderPage2" class="nav-link" asp-area="" asp-controller="Home" asp-action="Page2" style="color: @page2.GetColor()">@page2.GetLabel()</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Page3" style="color: @page3.GetColor()">@page3.GetLabel()</a>
+                            <a id="NavHeaderPage3" class="nav-link" asp-area="" asp-controller="Home" asp-action="Page3" style="color: @page3.GetColor()">@page3.GetLabel()</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Page4" style="color: @page4.GetColor()">@page4.GetLabel()</a>
+                            <a id="NavHeaderPage4" class="nav-link" asp-area="" asp-controller="Home" asp-action="Page4" style="color: @page4.GetColor()">@page4.GetLabel()</a>
                         </li>
                     </ul>
                 </div>
@@ -59,10 +59,10 @@
         <div class="container">
             &copy; 2020 - SampleSite
             @*- <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>*@
-            - <a asp-area="" asp-controller="Home" asp-action="Page1" style="color: @page1.GetColor()">@page1.GetLabel()</a>
-            - <a asp-area="" asp-controller="Home" asp-action="Page2" style="color: @page2.GetColor()">@page2.GetLabel()</a>
-            - <a asp-area="" asp-controller="Home" asp-action="Page3" style="color: @page3.GetColor()">@page3.GetLabel()</a>
-            - <a asp-area="" asp-controller="Home" asp-action="Page4" style="color: @page4.GetColor()">@page4.GetLabel()</a>
+            - <a id="NavFooterPage1" asp-area="" asp-controller="Home" asp-action="Page1" style="color: @page1.GetColor()">@page1.GetLabel()</a>
+            - <a id="NavFooterPage2" asp-area="" asp-controller="Home" asp-action="Page2" style="color: @page2.GetColor()">@page2.GetLabel()</a>
+            - <a id="NavFooterPage3" asp-area="" asp-controller="Home" asp-action="Page3" style="color: @page3.GetColor()">@page3.GetLabel()</a>
+            - <a id="NavFooterPage4" asp-area="" asp-controller="Home" asp-action="Page4" style="color: @page4.GetColor()">@page4.GetLabel()</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
