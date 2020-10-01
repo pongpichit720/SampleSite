@@ -90,5 +90,24 @@ namespace SampleSiteUITest
             Assert.AreEqual(_driver.Title, "Page 4 - SampleSite");
             Dispose();
         }
+
+        [TestMethod]
+        public void Page3Test()
+        {
+            _driver.Navigate().GoToUrl("https://localhost:44367/Home/Page3");
+            Assert.AreEqual(_driver.Title, "Page 3 - SampleSite");
+            _driver.FindElement(By.Id("SendBtn")).Click();
+            Assert.AreEqual(_driver.FindElement(By.Id("ReplyText")).GetAttribute("innerHTML"), "missing sender");
+            _driver.FindElement(By.Id("FromInput")).SendKeys("sender");
+            _driver.FindElement(By.Id("SendBtn")).Click();
+            Assert.AreEqual(_driver.FindElement(By.Id("ReplyText")).GetAttribute("innerHTML"), "missing subject");
+            _driver.FindElement(By.Id("SubjectInput")).SendKeys("subject");
+            _driver.FindElement(By.Id("SendBtn")).Click();
+            Assert.AreEqual(_driver.FindElement(By.Id("ReplyText")).GetAttribute("innerHTML"), "missing message");
+            _driver.FindElement(By.Id("MessageInput")).SendKeys("message");
+            _driver.FindElement(By.Id("SendBtn")).Click();
+            Assert.AreEqual(_driver.FindElement(By.Id("ReplyText")).GetAttribute("innerHTML"), "Got it. Will reply within 24 months.");
+            Dispose();
+        }
     }
 }

@@ -17,7 +17,7 @@ namespace SampleSiteTest.Backend
         public void GetDesciptionTest()
         {
             Page4 page4 = new Page4();
-            Assert.AreEqual(page4.GetDescription(), "something 2");
+            Assert.AreEqual(page4.GetDescription(), "something");
         }
 
         [TestMethod]
