@@ -5,3 +5,47 @@
 }
 <h1 style="color: @page3.GetColor()">@ViewData["Title"] - @page3.GetDescription()</h1>
 <br />
+<input type="text" id="FromInput" name="FromInput" placeholder="From" style="width: 20em;" maxlength="100">
+<br />
+<br />
+<input type="text" id="SubjectInput" name="SubjectInput" placeholder="Subject" style="width: 20em;" maxlength="100">
+<br />
+<br />
+@*<input type="text" id="MessageInput" name="MessageInput" placeholder="Message">*@
+<textarea id="MessageInput" name="MessageInput" placeholder="Message" rows="7" cols="50" maxlength="300"></textarea>
+<br />
+<br />
+<button id="SendBtn" style="background-color: @page3.GetColor(); color: white; padding: 0.2em 1em;" onclick="sendFunc()">Send</button>
+<label id="ReplyText" style="margin-left: 1em"></label>
+<script>
+    var sendFunc = () => {
+        var from = document.getElementById("FromInput");
+        var subject = document.getElementById("SubjectInput");
+        var message = document.getElementById("MessageInput");
+        var btn = document.getElementById("SendBtn");
+        var lab = document.getElementById("ReplyText");
+
+        if (from.value.length == 0) {
+            lab.style.color = "red";
+            lab.innerHTML = "missing sender"
+            return;
+        }
+        if (subject.value.length == 0) {
+            lab.style.color = "red";
+            lab.innerHTML = "missing subject"
+            return;
+        }
+        if (message.value.length == 0) {
+            lab.style.color = "red";
+            lab.innerHTML = "missing message"
+            return;
+        }
+
+        from.disabled = true;
+        subject.disabled = true;
+        message.disabled = true;
+        btn.disabled = true;
+        lab.style.color = "green";
+        lab.innerHTML = "Got it. Will reply within 24 months.";
+    }
+</script>

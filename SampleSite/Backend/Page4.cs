@@ -14,7 +14,7 @@ namespace SampleSite.Backend
         public Page4()
         {
             color = "seagreen";
-            description = "something 2";
+            description = "something";
             label = "Page_4";
         }
 
